@@ -16,14 +16,14 @@ from PySide6.QtGui import (QBrush, QColor, QConicalGradient, QCursor,
     QImage, QKeySequence, QLinearGradient, QPainter,
     QPalette, QPixmap, QRadialGradient, QTransform)
 from PySide6.QtWidgets import (QApplication, QComboBox, QGroupBox, QLabel,
-    QMainWindow, QMenuBar, QPlainTextEdit, QPushButton,
-    QSizePolicy, QSpinBox, QStatusBar, QWidget)
+    QMainWindow, QPlainTextEdit, QPushButton, QSizePolicy,
+    QSpinBox, QWidget)
 
 class Ui_MainWindow(object):
     def setupUi(self, MainWindow):
         if not MainWindow.objectName():
             MainWindow.setObjectName(u"MainWindow")
-        MainWindow.resize(391, 464)
+        MainWindow.resize(391, 427)
         self.centralwidget = QWidget(MainWindow)
         self.centralwidget.setObjectName(u"centralwidget")
         self.btn_exportar = QPushButton(self.centralwidget)
@@ -91,13 +91,6 @@ class Ui_MainWindow(object):
         font.setPointSize(8)
         self.edit_codigos.setFont(font)
         MainWindow.setCentralWidget(self.centralwidget)
-        self.menubar = QMenuBar(MainWindow)
-        self.menubar.setObjectName(u"menubar")
-        self.menubar.setGeometry(QRect(0, 0, 391, 22))
-        MainWindow.setMenuBar(self.menubar)
-        self.statusbar = QStatusBar(MainWindow)
-        self.statusbar.setObjectName(u"statusbar")
-        MainWindow.setStatusBar(self.statusbar)
 
         self.retranslateUi(MainWindow)
 
