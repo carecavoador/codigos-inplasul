@@ -18,6 +18,7 @@ class JanelaPrincipal(QMainWindow, Ui_MainWindow):
         titulo = "Importar arquivo de texto..."
         arquivo, _ = QFileDialog.getOpenFileName(
             self,
+            caption=titulo,
             filter=tipo_arquivo
         )
         texto = Path(arquivo).read_text().strip()

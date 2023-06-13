@@ -7,7 +7,10 @@ readme = "README.md"
 packages = [{include = "codigos_inplasul"}]
 
 [tool.poetry.dependencies]
-python = "^3.11"
+python = ">=3.11,<3.12"
+pypdf = "^3.9.1"
+reportlab = "^4.0.4"
+pyside6 = "^6.5.1.1"
 
 
 [build-system]
