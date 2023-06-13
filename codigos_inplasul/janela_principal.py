@@ -5,7 +5,7 @@ import gerador
 
 
 class JanelaPrincipal(QMainWindow, Ui_MainWindow):
-
+    """Janela principal do programa."""
     def __init__(self) -> None:
         super().__init__()
         self.setupUi(self)
@@ -14,6 +14,7 @@ class JanelaPrincipal(QMainWindow, Ui_MainWindow):
         self.btn_exportar.clicked.connect(self.exporta_pdf)
 
     def carrega_arquivo(self) -> None:
+        """Carrega os códigos a partir de um arquivo .txt"""
         tipo_arquivo = "Arquivos de texto (*.txt)"
         titulo = "Importar arquivo de texto..."
         arquivo, _ = QFileDialog.getOpenFileName(
@@ -25,9 +26,11 @@ class JanelaPrincipal(QMainWindow, Ui_MainWindow):
         self.edit_codigos.setPlainText(texto)
 
     def limpa_codigos(self) -> None:
+        """Limpa o campo de texto"""
         self.edit_codigos.clear()
 
     def exporta_pdf(self) -> None:
+        """Exporta os códigos para um arquivo .pdf"""
         tipo_arquivo = "Arquivo PDF (*.pdf)"
         titulo = "Salvar PDF..."
         arquivo, _ = QFileDialog.getSaveFileName(
@@ -37,7 +40,9 @@ class JanelaPrincipal(QMainWindow, Ui_MainWindow):
         )
         codigos = self.edit_codigos.toPlainText()
         colunas = self.spin_numero_colunas.value()
-        tamanho_pagina = self.combo_tamanho_pagina.itemText(self.combo_tamanho_pagina.currentIndex())
+        tamanho_pagina = self.combo_tamanho_pagina.itemText(
+            self.combo_tamanho_pagina.currentIndex()
+        )
         espaco_vertical = self.spin_vertical.value()
         espaco_horizontal = self.spin_horizontal.value()
         fonte = self.combo_fonte.itemText(self.combo_fonte.currentIndex())
