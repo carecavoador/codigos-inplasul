@@ -188,7 +188,29 @@ files = [
     {file = "shiboken6-6.5.1.1-pp39-pypy39_pp73-win_amd64.whl", hash = "sha256:34cacba2954bff632476fbead190868c6f068a6dd9e5c8fd7d2ed4f8f5cfade4"},
 ]
 
+[[package]]
+name = "tomli-w"
+version = "1.0.0"
+description = "A lil' TOML writer"
+optional = false
+python-versions = ">=3.7"
+files = [
+    {file = "tomli_w-1.0.0-py3-none-any.whl", hash = "sha256:9f2a07e8be30a0729e533ec968016807069991ae2fd921a78d42f429ae5f4463"},
+    {file = "tomli_w-1.0.0.tar.gz", hash = "sha256:f463434305e0336248cac9c2dc8076b707d8a12d019dd349f5c1e382dd1ae1b9"},
+]
+
+[[package]]
+name = "tomlkit"
+version = "0.11.8"
+description = "Style preserving TOML library"
+optional = false
+python-versions = ">=3.7"
+files = [
+    {file = "tomlkit-0.11.8-py3-none-any.whl", hash = "sha256:8c726c4c202bdb148667835f68d68780b9a003a9ec34167b6c673b38eff2a171"},
+    {file = "tomlkit-0.11.8.tar.gz", hash = "sha256:9330fc7faa1db67b541b28e62018c17d20be733177d290a13b24c62d1614e0c3"},
+]
+
 [metadata]
 lock-version = "2.0"
 python-versions = ">=3.11,<3.12"
-content-hash = "b72cd2261c881333c56528aa56e832572784e17444435617f698db7be03c433f"
+content-hash = "36101f5ed11071b38d34964394b1b5b24e606fb4cd9e5f413f54a30159ba298f"

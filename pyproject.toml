@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "codigos-inplasul"
-version = "0.1.1"
+version = "0.2.0"
 description = ""
 authors = ["Careca Voador <e.rodrigo@outlook.com>"]
 readme = "README.md"
@@ -11,6 +11,8 @@ python = ">=3.11,<3.12"
 pypdf = "^3.9.1"
 reportlab = "^4.0.4"
 pyside6 = "^6.5.1.1"
+tomli-w = "^1.0.0"
+tomlkit = "^0.11.8"
 
 
 [build-system]
