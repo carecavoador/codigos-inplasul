@@ -1,10 +1,10 @@
-import sys
+from sys import argv
 from PySide6.QtWidgets import QApplication
 from janela_principal import JanelaPrincipal
 
 
 def main():
-    app = QApplication(sys.argv)
+    app = QApplication(argv)
     app.setStyle("Fusion")
     janela = JanelaPrincipal()
     janela.show()

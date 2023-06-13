@@ -1,12 +1,9 @@
 """
 Este script gera um arquivo PDF com os códigos passados pelo usuário.
 """
-import io
-import pathlib
-import datetime
-
-import pypdf
-
+from io import BytesIO
+from  pathlib import Path
+from pypdf import PdfReader, PdfWriter
 from reportlab.pdfgen import canvas
 from reportlab.lib.units import mm
 from reportlab.lib.pagesizes import A4, A3
@@ -37,7 +34,7 @@ def gera_pdf_codigos(
         espaco_horizontal: int,
         fonte: str,
         tamanho_fonte: int,
-        arquivo_pdf: pathlib.Path
+        arquivo_pdf: Path
     ) -> None:
     """Gera e salva o PDF contendo os códigos informados."""
 
@@ -45,7 +42,7 @@ def gera_pdf_codigos(
     separador = ";"
     codigos = codigos.split(separador)
     lista_colunas = divide_em_colunas(codigos, colunas)
-    bytes_pdf = io.BytesIO()
+    bytes_pdf = BytesIO()
     _, altura = tamanho_pagina
     margem_topo = 10 * mm
     margem_lateral = 10 * mm
@@ -68,8 +65,8 @@ def gera_pdf_codigos(
 
     documento.save()
     bytes_pdf.seek(0)
-    novo_pdf = pypdf.PdfReader(bytes_pdf)
-    pdf_writer = pypdf.PdfWriter()
+    novo_pdf = PdfReader(bytes_pdf)
+    pdf_writer = PdfWriter()
     pdf_writer.add_page(novo_pdf.pages[0])
 
     with open(arquivo_pdf, "wb") as arquivo:
