@@ -42,6 +42,7 @@ class JanelaPrincipal(QMainWindow, Ui_MainWindow):
         espaco_horizontal = self.spin_horizontal.value()
         fonte = self.combo_fonte.itemText(self.combo_fonte.currentIndex())
         tamanho_fonte = self.spin_tamanho_fonte.value()
+        codigos = codigos.replace("\n", "")
         gerador.gera_pdf_codigos(
                                 codigos,
                                 colunas,

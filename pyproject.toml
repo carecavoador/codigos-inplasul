@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "codigos-inplasul"
-version = "0.1.0"
+version = "0.1.1"
 description = ""
 authors = ["Careca Voador <e.rodrigo@outlook.com>"]
 readme = "README.md"
