@@ -1,0 +1,15 @@
+[tool.poetry]
+name = "codigos-inplasul"
+version = "0.1.0"
+description = ""
+authors = ["Careca Voador <e.rodrigo@outlook.com>"]
+readme = "README.md"
+packages = [{include = "codigos_inplasul"}]
+
+[tool.poetry.dependencies]
+python = "^3.11"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
