@@ -15,6 +15,7 @@ TAMANHOS = {
     "A3": A3,
 }
 
+
 def divide_em_colunas(lista: list, colunas: int) -> list[list]:
     """
     Divide uma lista em um determinado numero de colulas e retorna
@@ -23,19 +24,21 @@ def divide_em_colunas(lista: list, colunas: int) -> list[list]:
     https://stackoverflow.com/questions/2130016/
     """
     k, m = divmod(len(lista), colunas)
-    return list((lista[i*k+min(i, m):(i+1)*k+min(i+1, m)] for i in range(colunas)))
+    return list(
+        (lista[i * k + min(i, m) : (i + 1) * k + min(i + 1, m)] for i in range(colunas))
+    )
 
 
 def gera_pdf_codigos(
-        codigos: str,
-        colunas: int,
-        tamanho_pagina: str,
-        espaco_vertical: int,
-        espaco_horizontal: int,
-        fonte: str,
-        tamanho_fonte: int,
-        arquivo_pdf: Path
-    ) -> None:
+    codigos: str,
+    colunas: int,
+    tamanho_pagina: str,
+    espaco_vertical: int,
+    espaco_horizontal: int,
+    fonte: str,
+    tamanho_fonte: int,
+    arquivo_pdf: Path,
+) -> None:
     """Gera e salva o PDF contendo os códigos informados."""
 
     tamanho_pagina = TAMANHOS[tamanho_pagina]
