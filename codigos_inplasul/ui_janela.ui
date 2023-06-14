@@ -252,8 +252,8 @@
     </property>
     <property name="font">
      <font>
-      <family>Monoid</family>
-      <pointsize>8</pointsize>
+      <family>Helvetica</family>
+      <pointsize>10</pointsize>
      </font>
     </property>
     <property name="plainText">

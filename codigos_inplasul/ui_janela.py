@@ -87,8 +87,8 @@ class Ui_MainWindow(object):
         self.edit_codigos.setObjectName(u"edit_codigos")
         self.edit_codigos.setGeometry(QRect(10, 41, 371, 251))
         font = QFont()
-        font.setFamilies([u"Monoid"])
-        font.setPointSize(8)
+        font.setFamilies([u"Helvetica"])
+        font.setPointSize(10)
         self.edit_codigos.setFont(font)
         MainWindow.setCentralWidget(self.centralwidget)
 
