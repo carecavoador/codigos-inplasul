@@ -1,7 +1,9 @@
-import gerador
-import config
 from pathlib import Path
+
 from PySide6.QtWidgets import QMainWindow, QFileDialog
+
+import config
+import gerador
 from ui_janela import Ui_MainWindow
 
 
@@ -23,7 +25,7 @@ class JanelaPrincipal(QMainWindow, Ui_MainWindow):
         self.spin_vertical.setValue(self.config["espacamento_vertical"])
         self.spin_horizontal.setValue(self.config["espacamento_horizontal"])
         self.btn_importar.clicked.connect(self.carrega_arquivo)
-        self.btn_limpar.clicked.connect(self.limpa_codigos)
+        self.btn_limpar.clicked.connect(lambda: self.edit_codigos.clear())
         self.btn_exportar.clicked.connect(self.exporta_pdf)
         self.combo_tamanho_pagina.currentTextChanged.connect(self.atualiza_config)
         self.combo_fonte.currentTextChanged.connect(self.atualiza_config)
@@ -42,9 +44,6 @@ class JanelaPrincipal(QMainWindow, Ui_MainWindow):
         texto = Path(arquivo).read_text().strip()
         self.edit_codigos.setPlainText(texto)
 
-    def limpa_codigos(self) -> None:
-        """Limpa o campo de texto"""
-        self.edit_codigos.clear()
 
     def exporta_pdf(self) -> None:
         """Exporta os códigos para um arquivo .pdf"""

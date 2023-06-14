@@ -3,6 +3,7 @@ Este script gera um arquivo PDF com os códigos passados pelo usuário.
 """
 from io import BytesIO
 from pathlib import Path
+
 from pypdf import PdfReader, PdfWriter
 from reportlab.pdfgen import canvas
 from reportlab.lib.units import mm

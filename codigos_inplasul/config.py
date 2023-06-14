@@ -1,6 +1,7 @@
 import tomllib
-import tomli_w
 from pathlib import Path
+
+import tomli_w
 from tomlkit import document, table
 
 
@@ -9,18 +10,25 @@ arquivo_config = Path().home().joinpath(".config/codigos-inplasul.toml")
 
 def carrega_config() -> dict:
     if not arquivo_config.exists():
-        salva_config()
+        salva_config(
+            tamanho_pagina="A4",
+            fonte="Helvetica",
+            tamanho_fonte=8,
+            numero_colunas=18,
+            espacamento_vertical=10,
+            espacamento_horizontal=5,
+        )
     config = tomllib.load(arquivo_config.open(mode="rb"))
     return config
 
 
 def salva_config(
-    tamanho_pagina: str = "A4",
-    fonte: str = "Helvetica",
-    tamanho_fonte: int = 8,
-    numero_colunas: int = 18,
-    espacamento_vertical: int = 10,
-    espacamento_horizontal: int = 5,
+    tamanho_pagina: str,
+    fonte: str,
+    tamanho_fonte: int,
+    numero_colunas: int,
+    espacamento_vertical: int,
+    espacamento_horizontal: int,
 ):
     doc = document()
     padroes = table()
