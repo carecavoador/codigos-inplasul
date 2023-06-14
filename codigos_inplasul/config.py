@@ -31,5 +31,9 @@ def salva_config(
     padroes.add("espacamento_vertical", espacamento_vertical)
     padroes.add("espacamento_horizontal", espacamento_horizontal)
     doc.add("padroes", padroes)
+
+    if not arquivo_config.parent.exists():
+        arquivo_config.parent.mkdir(parents=True, exist_ok=True)
+
     with open(arquivo_config, "wb") as f:
         tomli_w.dump(doc, f)
